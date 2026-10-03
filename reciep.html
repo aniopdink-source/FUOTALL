@@ -1,0 +1,762 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Player Transfer News Quiz</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            color: white;
+
+            background-image:
+                linear-gradient(
+                    rgba(0,0,0,0.72),
+                    rgba(0,0,0,0.72)
+                ),
+                url("images (5).jpng.jpeg");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        /* =========================
+           HOME BUTTON
+        ========================= */
+
+        .home {
+            display: inline-block;
+
+            padding: 12px 25px;
+
+            margin-bottom: 25px;
+
+            background: #034694;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            border-radius: 8px;
+
+            font-family: Arial, sans-serif;
+
+            box-shadow:
+                0 5px 15px rgba(0,0,0,0.4);
+
+            transition: 0.3s ease;
+        }
+
+        .home:hover {
+            background: #0879db;
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 8px 20px
+                rgba(0,120,255,0.5);
+        }
+
+        /* =========================
+           TITLE
+        ========================= */
+
+        h2 {
+            text-align: center;
+
+            font-size: 40px;
+
+            text-transform: uppercase;
+
+            padding-bottom: 15px;
+
+            border-bottom:
+                3px solid white;
+
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            text-align: center;
+
+            font-size: 25px;
+
+            margin-bottom: 30px;
+        }
+
+        /* =========================
+           QUESTIONS
+        ========================= */
+
+        .question {
+            margin: 15px 0;
+
+            padding: 18px 20px;
+
+            background:
+                rgba(0,0,0,0.65);
+
+            border-radius: 8px;
+
+            font-size: 18px;
+
+            color: white;
+
+            transition: 0.2s ease;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+        }
+
+        .question:hover {
+            background:
+                rgba(255,255,255,0.18);
+
+            transform:
+                translateX(5px);
+        }
+
+        .question h4 {
+            margin: 0 0 12px 0;
+
+            font-size: 18px;
+        }
+
+        .answers {
+            margin-left: 20px;
+
+            line-height: 1.8;
+
+            font-size: 17px;
+        }
+
+        /* =========================
+           ANSWER BUTTON
+        ========================= */
+
+        .answer-button {
+            display: block;
+
+            width: fit-content;
+
+            margin: 35px auto 10px;
+
+            padding: 14px 35px;
+
+            background: #e30613;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            border-radius: 8px;
+
+            font-size: 18px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0,0,0,0.4);
+
+            transition: 0.3s ease;
+        }
+
+        .answer-button:hover {
+            background: #ff1a2a;
+
+            transform:
+                translateY(-4px)
+                scale(1.04);
+
+            box-shadow:
+                0 10px 25px
+                rgba(227,6,19,0.5);
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            body {
+                padding: 10px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            .question {
+                font-size: 15px;
+
+                padding: 12px;
+            }
+
+            .question h4 {
+                font-size: 16px;
+            }
+
+            .answers {
+                font-size: 15px;
+
+                margin-left: 10px;
+            }
+
+            .home {
+                padding:
+                    10px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HOME -->
+
+    <a
+        class="home"
+        href="!DOCTYPE2.html"
+    >
+        🏠 Home
+    </a>
+
+
+    <!-- TITLE -->
+
+    <h2>
+        The Player Transfer News
+    </h2>
+
+    <h3>
+        The Player Teams
+    </h3>
+
+
+    <!-- QUESTION 1 -->
+
+    <div class="question">
+        <h4>
+            1. Which club is Julián Álvarez playing for?
+        </h4>
+
+        <div class="answers">
+            A) Real Madrid<br>
+            B) Atlético Madrid<br>
+            C) Manchester City<br>
+            D) Barcelona
+        </div>
+    </div>
+
+
+    <!-- QUESTION 2 -->
+
+    <div class="question">
+        <h4>
+            2. Which club is Bruno Guimarães associated with?
+        </h4>
+
+        <div class="answers">
+            A) Arsenal<br>
+            B) Chelsea<br>
+            C) Liverpool<br>
+            D) PSG
+        </div>
+    </div>
+
+
+    <!-- QUESTION 3 -->
+
+    <div class="question">
+        <h4>
+            3. Which club did Bruno Guimarães join from?
+        </h4>
+
+        <div class="answers">
+            A) Lyon<br>
+            B) Newcastle United<br>
+            C) Manchester United<br>
+            D) Benfica
+        </div>
+    </div>
+
+
+    <!-- QUESTION 4 -->
+
+    <div class="question">
+        <h4>
+            4. Which club does Jack Grealish play for?
+        </h4>
+
+        <div class="answers">
+            A) Arsenal<br>
+            B) Manchester City<br>
+            C) Everton<br>
+            D) Tottenham
+        </div>
+    </div>
+
+
+    <!-- QUESTION 5 -->
+
+    <div class="question">
+        <h4>
+            5. Which club is reportedly interested in Rafael Leão?
+        </h4>
+
+        <div class="answers">
+            A) Arsenal<br>
+            B) Chelsea<br>
+            C) Bayern Munich<br>
+            D) All of the above
+        </div>
+    </div>
+
+
+    <!-- QUESTION 6 -->
+
+    <div class="question">
+        <h4>
+            6. Which country does Rafael Leão represent?
+        </h4>
+
+        <div class="answers">
+            A) Spain<br>
+            B) Portugal<br>
+            C) Brazil<br>
+            D) France
+        </div>
+    </div>
+
+
+    <!-- QUESTION 7 -->
+
+    <div class="question">
+        <h4>
+            7. Which club does Enzo Fernández play for?
+        </h4>
+
+        <div class="answers">
+            A) Chelsea<br>
+            B) Liverpool<br>
+            C) Real Madrid<br>
+            D) Inter Milan
+        </div>
+    </div>
+
+
+    <!-- QUESTION 8 -->
+
+    <div class="question">
+        <h4>
+            8. Which club did Enzo Fernández join Chelsea from?
+        </h4>
+
+        <div class="answers">
+            A) Benfica<br>
+            B) Porto<br>
+            C) River Plate<br>
+            D) Juventus
+        </div>
+    </div>
+
+
+    <!-- QUESTION 9 -->
+
+    <div class="question">
+        <h4>
+            9. Which club does Cody Gakpo play for?
+        </h4>
+
+        <div class="answers">
+            A) Arsenal<br>
+            B) Liverpool<br>
+            C) Chelsea<br>
+            D) PSV
+        </div>
+    </div>
+
+
+    <!-- QUESTION 10 -->
+
+    <div class="question">
+        <h4>
+            10. Which club did Gakpo join Liverpool from?
+        </h4>
+
+        <div class="answers">
+            A) Ajax<br>
+            B) PSV Eindhoven<br>
+            C) Feyenoord<br>
+            D) AZ Alkmaar
+        </div>
+    </div>
+
+
+    <!-- QUESTION 11 -->
+
+    <div class="question">
+        <h4>
+            11. Which club does Alejandro Balde play for?
+        </h4>
+
+        <div class="answers">
+            A) Barcelona<br>
+            B) Real Madrid<br>
+            C) Atlético Madrid<br>
+            D) Sevilla
+        </div>
+    </div>
+
+
+    <!-- QUESTION 12 -->
+
+    <div class="question">
+        <h4>
+            12. Which position does Alejandro Balde mainly play?
+        </h4>
+
+        <div class="answers">
+            A) Striker<br>
+            B) Goalkeeper<br>
+            C) Left-back<br>
+            D) Centre-back
+        </div>
+    </div>
+
+
+    <!-- QUESTION 13 -->
+
+    <div class="question">
+        <h4>
+            13. Which club does Gabriel Martinelli play for?
+        </h4>
+
+        <div class="answers">
+            A) Arsenal<br>
+            B) Chelsea<br>
+            C) Flamengo<br>
+            D) Manchester City
+        </div>
+    </div>
+
+
+    <!-- QUESTION 14 -->
+
+    <div class="question">
+        <h4>
+            14. Which club is Gabriel Jesus associated with?
+        </h4>
+
+        <div class="answers">
+            A) Arsenal<br>
+            B) Manchester United<br>
+            C) Liverpool<br>
+            D) Barcelona
+        </div>
+    </div>
+
+
+    <!-- QUESTION 15 -->
+
+    <div class="question">
+        <h4>
+            15. Which club did Gabriel Jesus join Arsenal from?
+        </h4>
+
+        <div class="answers">
+            A) Palmeiras<br>
+            B) Manchester City<br>
+            C) Chelsea<br>
+            D) Santos
+        </div>
+    </div>
+
+
+    <!-- QUESTION 16 -->
+
+    <div class="question">
+        <h4>
+            16. Which club does Ollie Watkins play for?
+        </h4>
+
+        <div class="answers">
+            A) Aston Villa<br>
+            B) Newcastle<br>
+            C) Everton<br>
+            D) West Ham
+        </div>
+    </div>
+
+
+    <!-- QUESTION 17 -->
+
+    <div class="question">
+        <h4>
+            17. Which position is Ollie Watkins best known for?
+        </h4>
+
+        <div class="answers">
+            A) Goalkeeper<br>
+            B) Striker<br>
+            C) Centre-back<br>
+            D) Right-back
+        </div>
+    </div>
+
+
+    <!-- QUESTION 18 -->
+
+    <div class="question">
+        <h4>
+            18. Which club does Leon Goretzka play for?
+        </h4>
+
+        <div class="answers">
+            A) Bayern Munich<br>
+            B) Aston Villa<br>
+            C) Borussia Dortmund<br>
+            D) Bayer Leverkusen
+        </div>
+    </div>
+
+
+    <!-- QUESTION 19 -->
+
+    <div class="question">
+        <h4>
+            19. Which position does Leon Goretzka play?
+        </h4>
+
+        <div class="answers">
+            A) Midfielder<br>
+            B) Goalkeeper<br>
+            C) Striker<br>
+            D) Left-back
+        </div>
+    </div>
+
+
+    <!-- QUESTION 20 -->
+
+    <div class="question">
+        <h4>
+            20. Which club is Harvey Elliott associated with?
+        </h4>
+
+        <div class="answers">
+            A) Liverpool<br>
+            B) Arsenal<br>
+            C) Chelsea<br>
+            D) Brighton
+        </div>
+    </div>
+
+
+    <!-- QUESTION 21 -->
+
+    <div class="question">
+        <h4>
+            21. Which country does Harvey Elliott represent?
+        </h4>
+
+        <div class="answers">
+            A) Scotland<br>
+            B) England<br>
+            C) Wales<br>
+            D) Ireland
+        </div>
+    </div>
+
+
+    <!-- QUESTION 22 -->
+
+    <div class="question">
+        <h4>
+            22. Which club does Marc Guiu play for?
+        </h4>
+
+        <div class="answers">
+            A) Chelsea<br>
+            B) Barcelona<br>
+            C) Bayern Munich<br>
+            D) Juventus
+        </div>
+    </div>
+
+
+    <!-- QUESTION 23 -->
+
+    <div class="question">
+        <h4>
+            23. Which club did Marc Guiu come through?
+        </h4>
+
+        <div class="answers">
+            A) Barcelona<br>
+            B) Real Madrid<br>
+            C) Valencia<br>
+            D) Sevilla
+        </div>
+    </div>
+
+
+    <!-- QUESTION 24 -->
+
+    <div class="question">
+        <h4>
+            24. Which club is Daniel Muñoz associated with?
+        </h4>
+
+        <div class="answers">
+            A) Crystal Palace<br>
+            B) Arsenal<br>
+            C) Tottenham<br>
+            D) Fulham
+        </div>
+    </div>
+
+
+    <!-- QUESTION 25 -->
+
+    <div class="question">
+        <h4>
+            25. Which position does Daniel Muñoz mainly play?
+        </h4>
+
+        <div class="answers">
+            A) Striker<br>
+            B) Right-back<br>
+            C) Goalkeeper<br>
+            D) Centre-forward
+        </div>
+    </div>
+
+
+    <!-- QUESTION 26 -->
+
+    <div class="question">
+        <h4>
+            26. Which club does Ezri Konsa play for?
+        </h4>
+
+        <div class="answers">
+            A) Aston Villa<br>
+            B) Arsenal<br>
+            C) Chelsea<br>
+            D) West Ham
+        </div>
+    </div>
+
+
+    <!-- QUESTION 27 -->
+
+    <div class="question">
+        <h4>
+            27. Which club is Tosin Adarabioyo associated with?
+        </h4>
+
+        <div class="answers">
+            A) Chelsea<br>
+            B) Liverpool<br>
+            C) Arsenal<br>
+            D) Newcastle
+        </div>
+    </div>
+
+
+    <!-- QUESTION 28 -->
+
+    <div class="question">
+        <h4>
+            28. Which club did Tosin join before Chelsea?
+        </h4>
+
+        <div class="answers">
+            A) Fulham<br>
+            B) Everton<br>
+            C) Manchester City<br>
+            D) Crystal Palace
+        </div>
+    </div>
+
+
+    <!-- QUESTION 29 -->
+
+    <div class="question">
+        <h4>
+            29. Which person is most closely associated with the transfer phrase "Here we go!"?
+        </h4>
+
+        <div class="answers">
+            A) Fabrizio Romano<br>
+            B) UEFA<br>
+            C) FIFA<br>
+            D) Sky Sports
+        </div>
+    </div>
+
+
+    <!-- QUESTION 30 -->
+
+    <div class="question">
+        <h4>
+            30. What does "Here we go!" usually mean in transfer news?
+        </h4>
+
+        <div class="answers">
+            A) A player has scored<br>
+            B) A transfer is essentially confirmed/agreed<br>
+            C) A player has retired<br>
+            D) A club has changed manager
+        </div>
+    </div>
+
+
+    <!-- ANSWER BUTTON -->
+
+    <a
+        class="answer-button"
+        href="index answer.html"
+    >
+        📝 Answer
+    </a>
+
+</div>
+
+</body>
+</html>
+```

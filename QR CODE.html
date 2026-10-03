@@ -1,0 +1,161 @@
+ <!-- HOME BUTTON -->
+        <a href="!DOCTYPE2.html" class="home-btn">
+            🏠 Home
+        </a>
+
+ <!-- HOME BUTTON -->
+        <a href="!DOCTYPE2.html" class="home-btn">
+            🏠 Home
+        </a>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- HOME BUTTON -->
+
+
+<title>Football Hub QR Code</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        background:
+            radial-gradient(circle at 20% 30%, rgba(255, 33, 71, .25), transparent 30%),
+            radial-gradient(circle at 80% 70%, rgba(255, 181, 196, .18), transparent 30%),
+            #05070d;
+        color: white;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 500px;
+        padding: 35px;
+        text-align: center;
+        border-radius: 25px;
+        background: rgba(255,255,255,.06);
+        border: 1px solid rgba(255,255,255,.15);
+        box-shadow: 0 0 50px rgba(255,33,71,.2);
+        backdrop-filter: blur(15px);
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    h1 span {
+        color: #ffb5c4;
+    }
+
+    p {
+        color: #bfc3cf;
+        margin-bottom: 25px;
+    }
+
+    #qrcode {
+        background: white;
+        padding: 18px;
+        width: fit-content;
+        margin: 0 auto 25px;
+        border-radius: 15px;
+    }
+
+    .url {
+        font-size: 14px;
+        color: #aaa;
+        word-break: break-all;
+        margin-bottom: 20px;
+    }
+
+    button {
+        border: none;
+        padding: 14px 25px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #ff294c, #ff173d);
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>FOOTBALL <span>HUB</span></h1>
+
+    <p>Scan this QR code to open Football Hub</p>
+
+    <div id="qrcode"></div>
+
+    <div class="url" id="urlText"></div>
+
+    <button onclick="downloadQR()">
+        📥 Download QR Code
+    </button>
+
+</div>
+
+<!-- QR Code Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+
+    /*
+       IMPORTANT:
+       Change this URL to your real website URL.
+    */
+
+    const websiteURL = "https://YOUR-WEBSITE-LINK.com";
+
+    document.getElementById("urlText").textContent = websiteURL;
+
+    new QRCode(document.getElementById("qrcode"), {
+        text: websiteURL,
+        width: 250,
+        height: 250,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+
+    function downloadQR() {
+
+        const qrCanvas = document.querySelector("#qrcode canvas");
+
+        if (!qrCanvas) {
+            alert("QR code is still loading. Try again.");
+            return;
+        }
+
+        const link = document.createElement("a");
+
+        link.download = "Football-Hub-QR-Code.png";
+        link.href = qrCanvas.toDataURL("image/png");
+
+        link.click();
+    }
+
+</script>
+
+</body>
+</html>
+<script>

@@ -1,0 +1,634 @@
+<a href="!DOCTYPE2.html" class="home-btn">🏠 Home</a>
+
+<style>
+.home-btn {
+    display: inline-block;
+    background: #034694;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Trivia Quiz</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+
+            /* BACKGROUND IMAGE */
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+                url("image 02(1).png");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            color: white;
+        }
+
+        .quiz-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+
+            /* Transparent so the background image can be seen */
+            background-color: rgba(0, 0, 0, 0.35);
+
+            border-radius: 15px;
+        }
+
+        .home-link {
+            display: inline-block;
+            margin-bottom: 25px;
+            padding: 10px 18px;
+
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .home-link:hover {
+            background-color: white;
+            color: black;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 28px;
+            margin-top: 35px;
+        }
+
+        h4 {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        p {
+            margin: 5px 0 15px 0;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .question {
+            background-color: rgba(0, 0, 0, 0.55);
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+
+        .answer-link {
+            display: block;
+            margin-top: 30px;
+            padding: 15px;
+
+            background-color: red;
+            color: white;
+
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+
+            border-radius: 8px;
+        }
+
+        .answer-link:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="quiz-container">
+
+    <a class="home-link" href="index.html">Home</a>
+
+    <h3> FOOTBALL  QUESTION </h3>
+
+    <div class="question">
+        <h4>1. Who won the Ballon d'Or in 1991?</h4>
+        <p>A) Jean-Pierre Papin B) Lothar Matthäus C) Marco van Basten D) Roberto Baggio</p>
+    </div>
+
+    <div class="question">
+        <h4>2. Which player scored the winning goal in the 1990 World Cup final?</h4>
+        <p>A) Rudi Völler B) Andreas Brehme C) Jürgen Klinsmann D) Lothar Matthäus</p>
+    </div>
+
+    <div class="question">
+        <h4>3. Who was the first African player to win the Ballon d'Or?</h4>
+        <p>A) George Weah B) Didier Drogba C) Samuel Eto'o D) Abedi Pele</p>
+    </div>
+
+    <div class="question">
+        <h4>4. Which goalkeeper won the Yashin Trophy in 2019?</h4>
+        <p>A) Alisson B) Manuel Neuer C) Thibaut Courtois D) Marc-André ter Stegen</p>
+    </div>
+
+    <div class="question">
+        <h4>5. Who scored the fastest goal in World Cup history?</h4>
+        <p>A) Hakan Şükür B) Miroslav Klose C) Thomas Müller D) David Villa</p>
+    </div>
+
+    <div class="question">
+        <h4>6. Which player won the Golden Boot at the 2010 World Cup?</h4>
+        <p>A) Diego Forlán B) Thomas Müller C) David Villa D) Wesley Sneijder</p>
+    </div>
+
+    <div class="question">
+        <h4>7. Who was the first player to score in five different World Cups?</h4>
+        <p>A) Cristiano Ronaldo B) Lionel Messi C) Marta D) Miroslav Klose</p>
+    </div>
+
+    <div class="question">
+        <h4>8. Which player has the most appearances for Spain's men's national team?</h4>
+        <p>A) Xavi B) Sergio Ramos C) Iker Casillas D) Andrés Iniesta</p>
+    </div>
+
+    <div class="question">
+        <h4>9. Who scored the winning goal in the 2014 World Cup final?</h4>
+        <p>A) Thomas Müller B) Mario Götze C) Miroslav Klose D) André Schürrle</p>
+    </div>
+
+    <div class="question">
+        <h4>10. Which player won the 2006 Ballon d'Or?</h4>
+        <p>A) Fabio Cannavaro B) Ronaldinho C) Thierry Henry D) Zinedine Zidane</p>
+    </div>
+
+    <div class="question">
+        <h4>11. Which player scored a hat-trick in the 1966 World Cup final?</h4>
+        <p>A) Bobby Charlton B) Geoff Hurst C) Jimmy Greaves D) Roger Hunt</p>
+    </div>
+
+    <div class="question">
+        <h4>12. Who was the first goalkeeper to win the Ballon d'Or?</h4>
+        <p>A) Dino Zoff B) Gordon Banks C) Lev Yashin D) Peter Schmeichel</p>
+    </div>
+
+    <div class="question">
+        <h4>13. Which player has won the most Champions League titles as a player?</h4>
+        <p>A) Cristiano Ronaldo B) Paco Gento C) Luka Modrić D) Karim Benzema</p>
+    </div>
+
+    <div class="question">
+        <h4>14. Who scored Barcelona's first goal in the 2009 Champions League final?</h4>
+        <p>A) Samuel Eto'o B) Lionel Messi C) Xavi D) Thierry Henry</p>
+    </div>
+
+    <div class="question">
+        <h4>15. Which player won the 1986 Ballon d'Or?</h4>
+        <p>A) Diego Maradona B) Michel Platini C) Igor Belanov D) Gary Lineker</p>
+    </div>
+
+    <div class="question">
+        <h4>16. Who scored the winning goal for Manchester United in the 1999 Champions League final?</h4>
+        <p>A) David Beckham B) Teddy Sheringham C) Ole Gunnar Solskjær D) Ryan Giggs</p>
+    </div>
+
+    <div class="question">
+        <h4>17. Which player was nicknamed “Il Divin Codino”?</h4>
+        <p>A) Paolo Maldini B) Roberto Baggio C) Alessandro Del Piero D) Francesco Totti</p>
+    </div>
+
+    <div class="question">
+        <h4>18. Who won the Golden Ball at the 2018 World Cup?</h4>
+        <p>A) Luka Modrić B) Antoine Griezmann C) Kylian Mbappé D) Eden Hazard</p>
+    </div>
+
+    <div class="question">
+        <h4>19. Which player scored the most goals at the 2002 World Cup?</h4>
+        <p>A) Rivaldo B) Ronaldo Nazário C) Miroslav Klose D) Ronaldinho</p>
+    </div>
+
+    <div class="question">
+        <h4>20. Who scored the only goal in the 1998 World Cup final?</h4>
+        <p>A) Ronaldo B) Zinedine Zidane C) Thierry Henry D) Emmanuel Petit</p>
+    </div>
+
+    <div class="question">
+        <h4>21. Which player won the Ballon d'Or in 1977?</h4>
+        <p>A) Kevin Keegan B) Allan Simonsen C) Michel Platini D) Franz Beckenbauer</p>
+    </div>
+
+    <div class="question">
+        <h4>22. Who was known as “The Divine Ponytail”?</h4>
+        <p>A) Roberto Baggio B) Del Piero C) Totti D) Baresi</p>
+    </div>
+
+    <div class="question">
+        <h4>23. Which player scored the famous volley in the 2002 Champions League final?</h4>
+        <p>A) Roberto Carlos B) Zinedine Zidane C) Luís Figo D) Raúl</p>
+    </div>
+
+    <div class="question">
+        <h4>24. Who was Arsenal's all-time leading goalscorer for many years?</h4>
+        <p>A) Ian Wright B) Dennis Bergkamp C) Thierry Henry D) Robin van Persie</p>
+    </div>
+
+    <div class="question">
+        <h4>25. Which player scored the winning goal in the 2010 Champions League final?</h4>
+        <p>A) Diego Milito B) Wesley Sneijder C) Samuel Eto'o D) Javier Zanetti</p>
+    </div>
+
+    <div class="question">
+        <h4>26. Who won the Ballon d'Or in 2004?</h4>
+        <p>A) Andriy Shevchenko B) Ronaldinho C) Pavel Nedvěd D) Thierry Henry</p>
+    </div>
+
+    <div class="question">
+        <h4>27. Which player was known as “Der Kaiser”?</h4>
+        <p>A) Gerd Müller B) Franz Beckenbauer C) Karl-Heinz Rummenigge D) Lothar Matthäus</p>
+    </div>
+
+    <div class="question">
+        <h4>28. Who scored the winning goal in the 1986 World Cup quarter-final against England?</h4>
+        <p>A) Jorge Valdano B) Diego Maradona C) Jorge Burruchaga D) Claudio Caniggia</p>
+    </div>
+
+    <div class="question">
+        <h4>29. Which player won the 1994 Ballon d'Or?</h4>
+        <p>A) Romário B) Hristo Stoichkov C) Roberto Baggio D) George Weah</p>
+    </div>
+
+    <div class="question">
+        <h4>30. Who was the first player to win the European Golden Shoe four times?</h4>
+        <p>A) Lionel Messi B) Cristiano Ronaldo C) Gerd Müller D) Eusébio</p>
+    </div>
+
+    <div class="question">
+        <h4>31. Which player scored the fastest hat-trick in Premier League history?</h4>
+        <p>A) Sergio Agüero B) Sadio Mané C) Harry Kane D) Robbie Fowler</p>
+    </div>
+
+    <div class="question">
+        <h4>32. Who scored four goals for Germany against Brazil in the 2014 World Cup?</h4>
+        <p>A) Thomas Müller B) Miroslav Klose C) Toni Kroos D) André Schürrle</p>
+    </div>
+
+    <div class="question">
+        <h4>33. Which player won the 2013 Ballon d'Or?</h4>
+        <p>A) Franck Ribéry B) Lionel Messi C) Cristiano Ronaldo D) Andrés Iniesta</p>
+    </div>
+
+    <div class="question">
+        <h4>34. Who was known as “The Black Pearl”?</h4>
+        <p>A) Eusébio B) Pelé C) George Weah D) Samuel Eto'o</p>
+    </div>
+
+    <div class="question">
+        <h4>35. Which player scored Chelsea's winning penalty in the 2012 Champions League final?</h4>
+        <p>A) Frank Lampard B) Didier Drogba C) Juan Mata D) Ashley Cole</p>
+    </div>
+
+    <div class="question">
+        <h4>36. Who won the 1999 Ballon d'Or?</h4>
+        <p>A) David Beckham B) Rivaldo C) Luís Figo D) Gabriel Batistuta</p>
+    </div>
+
+    <div class="question">
+        <h4>37. Which player scored the winning goal in the 2016 Champions League final?</h4>
+        <p>A) Cristiano Ronaldo B) Gareth Bale C) Sergio Ramos D) Karim Benzema</p>
+    </div>
+
+    <div class="question">
+        <h4>38. Who was the first player to score 50 Premier League goals with two different clubs?</h4>
+        <p>A) Thierry Henry B) Robbie Keane C) Nicolas Anelka D) Wayne Rooney</p>
+    </div>
+
+    <div class="question">
+        <h4>39. Which player won the Golden Boot at the 2014 World Cup?</h4>
+        <p>A) James Rodríguez B) Thomas Müller C) Neymar D) Lionel Messi</p>
+    </div>
+
+    <div class="question">
+        <h4>40. Who scored the winning goal in the 2005 Champions League final penalty shootout?</h4>
+        <p>A) Steven Gerrard B) Xabi Alonso C) Vladimir Smicer D) Jerzy Dudek</p>
+    </div>
+
+    <div class="question">
+        <h4>41. Which player has the most goals in UEFA Champions League history?</h4>
+        <p>A) Lionel Messi B) Robert Lewandowski C) Cristiano Ronaldo D) Karim Benzema</p>
+    </div>
+
+    <div class="question">
+        <h4>42. Who won the 2008 Ballon d'Or?</h4>
+        <p>A) Cristiano Ronaldo B) Lionel Messi C) Kaká D) Xavi</p>
+    </div>
+
+    <div class="question">
+        <h4>43. Which player scored the “Ghost Goal” against England in 1966?</h4>
+        <p>A) Geoff Hurst B) Wolfgang Weber C) Franz Beckenbauer D) Helmut Haller</p>
+    </div>
+
+    <div class="question">
+        <h4>44. Who won the Ballon d'Or in 1990?</h4>
+        <p>A) Diego Maradona B) Lothar Matthäus C) Roberto Baggio D) Jean-Pierre Papin</p>
+    </div>
+
+    <div class="question">
+        <h4>45. Which player played for both Barcelona and Real Madrid and won the Ballon d'Or in 2000?</h4>
+        <p>A) Luís Figo B) Ronaldo Nazário C) Rivaldo D) Michael Owen</p>
+    </div>
+
+    <div class="question">
+        <h4>46. Who scored the winning goal in the 2012 Europa League final?</h4>
+        <p>A) Radamel Falcao B) Diego Costa C) Fernando Torres D) Adrián López</p>
+    </div>
+
+    <div class="question">
+        <h4>47. Which player has the most Premier League assists?</h4>
+        <p>A) Ryan Giggs B) Kevin De Bruyne C) Cesc Fàbregas D) Frank Lampard</p>
+    </div>
+
+    <div class="question">
+        <h4>48. Who won the 2001 Ballon d'Or?</h4>
+        <p>A) Michael Owen B) Luís Figo C) Rivaldo D) David Beckham</p>
+    </div>
+
+    <div class="question">
+        <h4>49. Which player scored the winning goal in the 1992 European Cup final?</h4>
+        <p>A) Ronald Koeman B) Hristo Stoichkov C) Michael Laudrup D) José Mari Bakero</p>
+    </div>
+
+    <div class="question">
+        <h4>50. Who was known as “The Little Magician” at Barcelona?</h4>
+        <p>A) Andrés Iniesta B) Xavi C) Lionel Messi D) Ronaldinho</p>
+    </div>
+
+    <div class="question">
+        <h4>51. Which player won the Ballon d'Or in 1976?</h4>
+        <p>A) Franz Beckenbauer B) Kevin Keegan C) Allan Simonsen D) Johan Cruyff</p>
+    </div>
+
+    <div class="question">
+        <h4>52. Who scored the winning goal in the 1974 World Cup final?</h4>
+        <p>A) Gerd Müller B) Paul Breitner C) Franz Beckenbauer D) Johan Neeskens</p>
+    </div>
+
+    <div class="question">
+        <h4>53. Which player won three consecutive Ballon d'Or awards from 1983–1985?</h4>
+        <p>A) Michel Platini B) Marco van Basten C) Johan Cruyff D) Karl-Heinz Rummenigge</p>
+    </div>
+
+    <div class="question">
+        <h4>54. Who scored the winning goal in the 2008 Champions League final?</h4>
+        <p>A) Cristiano Ronaldo B) Wayne Rooney C) John Terry D) Didier Drogba</p>
+    </div>
+
+    <div class="question">
+        <h4>55. Which player has the most appearances for Italy?</h4>
+        <p>A) Gianluigi Buffon B) Paolo Maldini C) Fabio Cannavaro D) Giorgio Chiellini</p>
+    </div>
+
+    <div class="question">
+        <h4>56. Who scored the first goal in the 2018 World Cup final?</h4>
+        <p>A) Mario Mandžukić B) Antoine Griezmann C) Paul Pogba D) Kylian Mbappé</p>
+    </div>
+
+    <div class="question">
+        <h4>57. Which player won the 1995 Ballon d'Or?</h4>
+        <p>A) George Weah B) Jari Litmanen C) Roberto Baggio D) Hristo Stoichkov</p>
+    </div>
+
+    <div class="question">
+        <h4>58. Who scored the winning goal in the 2003 Champions League final?</h4>
+        <p>A) Pavel Nedvěd B) Andriy Shevchenko C) David Trezeguet D) Fabrizio Miccoli</p>
+    </div>
+
+    <div class="question">
+        <h4>59. Which player scored the winning goal in the 1988 European Championship final?</h4>
+        <p>A) Marco van Basten B) Ruud Gullit C) Frank Rijkaard D) Ronald Koeman</p>
+    </div>
+
+    <div class="question">
+        <h4>60. Who won the Golden Ball at the 2002 World Cup?</h4>
+        <p>A) Ronaldo Nazário B) Oliver Kahn C) Rivaldo D) Ronaldinho</p>
+    </div>
+
+    <div class="question">
+        <h4>61. Which player scored the most goals in the 1958 World Cup?</h4>
+        <p>A) Pelé B) Just Fontaine C) Vavá D) Didi</p>
+    </div>
+
+    <div class="question">
+        <h4>62. Who won the 1982 Ballon d'Or?</h4>
+        <p>A) Paolo Rossi B) Michel Platini C) Zico D) Karl-Heinz Rummenigge</p>
+    </div>
+
+    <div class="question">
+        <h4>63. Which player scored the winning goal in the 1970 World Cup final?</h4>
+        <p>A) Pelé B) Jairzinho C) Carlos Alberto D) Gérson</p>
+    </div>
+
+    <div class="question">
+        <h4>64. Who has the most appearances in Premier League history?</h4>
+        <p>A) Gareth Barry B) Ryan Giggs C) Frank Lampard D) James Milner</p>
+    </div>
+
+    <div class="question">
+        <h4>65. Which player won the 2010 Ballon d'Or?</h4>
+        <p>A) Xavi B) Andrés Iniesta C) Lionel Messi D) Wesley Sneijder</p>
+    </div>
+
+    <div class="question">
+        <h4>66. Who scored the winning goal in the 1994 World Cup final?</h4>
+        <p>A) Romário B) Bebeto C) Roberto Baggio D) No player</p>
+    </div>
+
+    <div class="question">
+        <h4>67. Which player has won the most Serie A titles?</h4>
+        <p>A) Gianluigi Buffon B) Giorgio Chiellini C) Leonardo Bonucci D) Andrea Pirlo</p>
+    </div>
+
+    <div class="question">
+        <h4>68. Who won the 1989 Ballon d'Or?</h4>
+        <p>A) Marco van Basten B) Ruud Gullit C) Frank Rijkaard D) Franco Baresi</p>
+    </div>
+
+    <div class="question">
+        <h4>69. Which player scored the winning goal in the 1968 European Championship final replay?</h4>
+        <p>A) Luigi Riva B) Pietro Anastasi C) Sandro Mazzola D) Gianni Rivera</p>
+    </div>
+
+    <div class="question">
+        <h4>70. Who was the first player to score 100 Champions League goals?</h4>
+        <p>A) Lionel Messi B) Robert Lewandowski C) Cristiano Ronaldo D) Raúl</p>
+    </div>
+
+    <div class="question">
+        <h4>71. Which player won the 1992 Ballon d'Or?</h4>
+        <p>A) Marco van Basten B) Dennis Bergkamp C) Roberto Baggio D) Hristo Stoichkov</p>
+    </div>
+
+    <div class="question">
+        <h4>72. Who scored the winning goal in the 2006 World Cup semifinal between Germany and Italy?</h4>
+        <p>A) Fabio Grosso B) Alessandro Del Piero C) Luca Toni D) Andrea Pirlo</p>
+    </div>
+
+    <div class="question">
+        <h4>73. Which player was the first to win the Champions League with three different clubs?</h4>
+        <p>A) Clarence Seedorf B) Samuel Eto'o C) Cristiano Ronaldo D) Toni Kroos</p>
+    </div>
+
+    <div class="question">
+        <h4>74. Who won the 1972 Ballon d'Or?</h4>
+        <p>A) Johan Cruyff B) Franz Beckenbauer C) Gerd Müller D) Bobby Moore</p>
+    </div>
+
+    <div class="question">
+        <h4>75. Which player scored the winning goal in the 1996 European Championship semifinal against England?</h4>
+        <p>A) Alan Shearer B) Andreas Möller C) Jürgen Klinsmann D) Matthias Sammer</p>
+    </div>
+
+    <div class="question">
+        <h4>76. Who won the 1993 Ballon d'Or?</h4>
+        <p>A) Roberto Baggio B) Dennis Bergkamp C) Eric Cantona D) Marco van Basten</p>
+    </div>
+
+    <div class="question">
+        <h4>77. Which player scored the first-ever Premier League goal?</h4>
+        <p>A) Alan Shearer B) Brian Deane C) Teddy Sheringham D) Eric Cantona</p>
+    </div>
+
+    <div class="question">
+        <h4>78. Who won the Golden Boot at the 1986 World Cup?</h4>
+        <p>A) Diego Maradona B) Gary Lineker C) Careca D) Emilio Butragueño</p>
+    </div>
+
+    <div class="question">
+        <h4>79. Which player scored the winning goal in the 1984 European Championship final?</h4>
+        <p>A) Michel Platini B) Jean Tigana C) Bruno Bellone D) Alain Giresse</p>
+    </div>
+
+    <div class="question">
+        <h4>80. Who won the 1991 FIFA World Player of the Year award?</h4>
+        <p>A) Lothar Matthäus B) Marco van Basten C) Jean-Pierre Papin D) Roberto Baggio</p>
+    </div>
+
+    <div class="question">
+        <h4>81. Which player has scored in the most consecutive Champions League seasons?</h4>
+        <p>A) Lionel Messi B) Karim Benzema C) Cristiano Ronaldo D) Raúl</p>
+    </div>
+
+    <div class="question">
+        <h4>82. Who scored the winning goal in the 2013 Champions League final?</h4>
+        <p>A) Arjen Robben B) Franck Ribéry C) Mario Mandžukić D) Thomas Müller</p>
+    </div>
+
+    <div class="question">
+        <h4>83. Which player won the 1981 Ballon d'Or?</h4>
+        <p>A) Karl-Heinz Rummenigge B) Zico C) Kevin Keegan D) Michel Platini</p>
+    </div>
+
+    <div class="question">
+        <h4>84. Who was the first player to score 200 Premier League goals?</h4>
+        <p>A) Wayne Rooney B) Alan Shearer C) Harry Kane D) Sergio Agüero</p>
+    </div>
+
+    <div class="question">
+        <h4>85. Which player scored the winning goal in the 1978 World Cup final?</h4>
+        <p>A) Mario Kempes B) Daniel Bertoni C) Leopoldo Luque D) Osvaldo Ardiles</p>
+    </div>
+
+    <div class="question">
+        <h4>86. Who won the 1973 Ballon d'Or?</h4>
+        <p>A) Johan Cruyff B) Gerd Müller C) Franz Beckenbauer D) Sandro Mazzola</p>
+    </div>
+
+    <div class="question">
+        <h4>87. Which player scored the winning goal in the 2015 Champions League final?</h4>
+        <p>A) Luis Suárez B) Ivan Rakitić C) Neymar D) Lionel Messi</p>
+    </div>
+
+    <div class="question">
+        <h4>88. Who won the 1997 Ballon d'Or?</h4>
+        <p>A) Ronaldo Nazário B) Zinedine Zidane C) Roberto Carlos D) Dennis Bergkamp</p>
+    </div>
+
+    <div class="question">
+        <h4>89. Which player scored the winning goal in the 2000 European Championship final?</h4>
+        <p>A) Thierry Henry B) David Trezeguet C) Zinedine Zidane D) Patrick Vieira</p>
+    </div>
+
+    <div class="question">
+        <h4>90. Who has the most assists in Champions League history?</h4>
+        <p>A) Lionel Messi B) Cristiano Ronaldo C) Ángel Di María D) Ryan Giggs</p>
+    </div>
+
+    <div class="question">
+        <h4>91. Which player won the 1980 Ballon d'Or?</h4>
+        <p>A) Karl-Heinz Rummenigge B) Kevin Keegan C) Franz Beckenbauer D) Michel Platini</p>
+    </div>
+
+    <div class="question">
+        <h4>92. Who scored the winning goal in the 1998 UEFA Champions League final?</h4>
+        <p>A) Predrag Mijatović B) Raúl C) Clarence Seedorf D) Fernando Morientes</p>
+    </div>
+
+    <div class="question">
+        <h4>93. Which player won the 1996 Ballon d'Or?</h4>
+        <p>A) Matthias Sammer B) Ronaldo Nazário C) Alan Shearer D) Jürgen Klinsmann</p>
+    </div>
+
+    <div class="question">
+        <h4>94. Who scored the winning goal in the 2019 Champions League final?</h4>
+        <p>A) Mohamed Salah B) Divock Origi C) Sadio Mané D) Roberto Firmino</p>
+    </div>
+
+    <div class="question">
+        <h4>95. Which player won the 1987 Ballon d'Or?</h4>
+        <p>A) Ruud Gullit B) Marco van Basten C) Diego Maradona D) Michel Platini</p>
+    </div>
+
+    <div class="question">
+        <h4>96. Who scored the winning goal in the 2004 European Championship final?</h4>
+        <p>A) Angelos Basinas B) Theodoros Zagorakis C) Angelos Charisteas D) Georgios Karagounis</p>
+    </div>
+
+    <div class="question">
+        <h4>97. Which player won the 1979 Ballon d'Or?</h4>
+        <p>A) Kevin Keegan B) Allan Simonsen C) Karl-Heinz Rummenigge D) Johan Cruyff</p>
+    </div>
+
+    <div class="question">
+        <h4>98. Who scored the winning goal in the 2011 Champions League final?</h4>
+        <p>A) Lionel Messi B) David Villa C) Pedro D) Wayne Rooney</p>
+    </div>
+
+    <div class="question">
+        <h4>99. Which player won the 1975 Ballon d'Or?</h4>
+        <p>A) Franz Beckenbauer B) Oleg Blokhin C) Johan Cruyff D) Kevin Keegan</p>
+    </div>
+
+    <div class="question">
+        <h4>🐐 100. Which player has won the most Ballon d'Or awards as of 2026?</h4>
+        <p>A) Cristiano Ronaldo B) Lionel Messi C) Michel Platini D) Johan Cruyff</p>
+    </div>
+
+    <a class="answer-link" href="questions answer.html">
+        ANSWERS
+    </a>
+
+</div>
+
+</body>
+</html>

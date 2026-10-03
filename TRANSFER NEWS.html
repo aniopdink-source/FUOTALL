@@ -1,0 +1,2159 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>2026/27 Football Transfers</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(0, 120, 255, 0.20),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 100% 100%,
+                    rgba(0, 80, 255, 0.10),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #000000,
+                    #03070f 45%,
+                    #000000
+                );
+
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           BACKGROUND LIGHT
+        ========================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+
+            width: 700px;
+            height: 700px;
+
+            top: -350px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0, 130, 255, 0.18),
+                    transparent 70%
+                );
+
+            filter: blur(30px);
+
+            animation: glowMove 8s ease-in-out infinite;
+
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .container {
+            position: relative;
+            z-index: 2;
+
+            width: 94%;
+            max-width: 1550px;
+
+            margin: auto;
+
+            padding: 35px 0 80px;
+        }
+
+        /* =========================
+           TOP BAR
+        ========================= */
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 50px;
+        }
+
+        .home-btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            padding: 13px 25px;
+
+            color: #fff;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #034694,
+                    #0879db
+                );
+
+            border: 1px solid rgba(255,255,255,0.25);
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            font-weight: 800;
+            font-size: 15px;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.55),
+                0 0 20px rgba(0,120,255,0.25);
+
+            transition: 0.3s ease;
+        }
+
+        .home-btn:hover {
+            transform: translateY(-4px) scale(1.04);
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.70),
+                0 0 35px rgba(0,140,255,0.65);
+        }
+
+        .season-badge {
+            padding: 9px 18px;
+
+            color: #b9dbff;
+
+            background: rgba(255,255,255,0.06);
+
+            border: 1px solid rgba(255,255,255,0.14);
+
+            border-radius: 50px;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            backdrop-filter: blur(15px);
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header-icon {
+            font-size: 65px;
+
+            display: inline-block;
+
+            margin-bottom: 15px;
+
+            animation:
+                floating 4s ease-in-out infinite;
+
+            filter:
+                drop-shadow(
+                    0 10px 25px
+                    rgba(0,0,0,0.7)
+                );
+        }
+
+        .header h1 {
+            font-size:
+                clamp(38px, 6vw, 75px);
+
+            font-weight: 950;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #fff,
+                    #56b8ff,
+                    #fff,
+                    #56b8ff,
+                    #fff
+                );
+
+            background-size: 300% auto;
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+
+            animation:
+                shine 7s linear infinite;
+        }
+
+        .header p {
+            margin-top: 18px;
+
+            color: #91aac2;
+
+            font-size: 15px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+        .header-line {
+            width: 280px;
+            height: 4px;
+
+            margin: 28px auto 0;
+
+            border-radius: 50px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #008cff,
+                    #fff,
+                    #008cff,
+                    transparent
+                );
+
+            box-shadow:
+                0 0 20px
+                rgba(0,140,255,0.9);
+        }
+
+        /* =========================
+           CONTROLS
+        ========================= */
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 15px;
+
+            margin-bottom: 25px;
+        }
+
+        .search-box,
+        .filter {
+            padding: 15px 18px;
+
+            border-radius: 14px;
+
+            color: #fff;
+
+            background:
+                rgba(255,255,255,0.07);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.14);
+
+            outline: none;
+
+            font-size: 15px;
+
+            backdrop-filter: blur(15px);
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .search-box::placeholder {
+            color: #7f96ad;
+        }
+
+        .search-box:focus,
+        .filter:focus {
+            border-color: #008cff;
+
+            box-shadow:
+                0 0 20px
+                rgba(0,140,255,0.25);
+        }
+
+        .filter {
+            min-width: 180px;
+            cursor: pointer;
+
+            background: #080d15;
+        }
+
+        /* =========================
+           TABLE
+        ========================= */
+
+        .table-card {
+            padding: 15px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.09),
+                    rgba(255,255,255,0.025)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.14);
+
+            border-radius: 25px;
+
+            backdrop-filter: blur(20px);
+
+            box-shadow:
+                0 25px 70px
+                rgba(0,0,0,0.65),
+                inset 0 1px 1px
+                rgba(255,255,255,0.10);
+
+            overflow: hidden;
+        }
+
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            min-width: 1150px;
+
+            border-collapse: collapse;
+        }
+
+        thead th {
+            padding: 18px 14px;
+
+            text-align: left;
+
+            color: #74c5ff;
+
+            background:
+                rgba(0,110,230,0.12);
+
+            border-bottom:
+                1px solid
+                rgba(0,140,255,0.25);
+
+            font-size: 12px;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+        }
+
+        tbody tr {
+            transition: 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background:
+                rgba(0,130,255,0.09);
+        }
+
+        tbody td {
+            padding: 16px 14px;
+
+            color: #e5edf6;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.06);
+
+            font-size: 14px;
+
+            white-space: nowrap;
+        }
+
+        .number {
+            color: #6f859b;
+            font-weight: 700;
+        }
+
+        .player {
+            color: #fff;
+            font-weight: 800;
+        }
+
+        .club {
+            color: #d4e4f3;
+            font-weight: 600;
+        }
+
+        .arrow {
+            color: #008cff;
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        .fee {
+            color: #70c5ff;
+            font-weight: 800;
+        }
+
+        .free {
+            color: #66e5a0;
+            font-weight: 800;
+        }
+
+        .loan {
+            color: #ffd166;
+            font-weight: 800;
+        }
+
+        .status {
+            display: inline-block;
+
+            padding: 6px 10px;
+
+            border-radius: 8px;
+
+            color: #80ffb2;
+
+            background:
+                rgba(0,210,100,0.10);
+
+            border:
+                1px solid
+                rgba(0,255,130,0.18);
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+            letter-spacing: 0.5px;
+
+            text-transform: uppercase;
+        }
+
+        .status.exclusive {
+            color: #ffd76a;
+
+            background:
+                rgba(255,190,0,0.08);
+
+            border-color:
+                rgba(255,200,0,0.18);
+        }
+
+        .status.official {
+            color: #67c7ff;
+
+            background:
+                rgba(0,140,255,0.08);
+
+            border-color:
+                rgba(0,140,255,0.18);
+        }
+
+        .date {
+            color: #9bb0c4;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            margin-top: 50px;
+
+            padding-top: 25px;
+
+            text-align: center;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.10);
+
+            color: #71869b;
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes glowMove {
+            0%, 100% {
+                opacity: 0.5;
+
+                transform:
+                    translateX(-50%)
+                    scale(1);
+            }
+
+            50% {
+                opacity: 1;
+
+                transform:
+                    translateX(-50%)
+                    scale(1.2);
+            }
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform:
+                    translateY(0)
+                    rotate(0);
+            }
+
+            50% {
+                transform:
+                    translateY(-12px)
+                    rotate(5deg);
+            }
+        }
+
+        @keyframes shine {
+            0% {
+                background-position: 0% center;
+            }
+
+            100% {
+                background-position: 300% center;
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .container {
+                width: 92%;
+            }
+
+            .season-badge {
+                display: none;
+            }
+
+            .header-icon {
+                font-size: 50px;
+            }
+
+            .header h1 {
+                font-size: 34px;
+                letter-spacing: 1px;
+            }
+
+            .header p {
+                font-size: 10px;
+                line-height: 1.8;
+                letter-spacing: 2px;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            .search-box,
+            .filter {
+                width: 100%;
+            }
+
+            .table-card {
+                padding: 8px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <!-- =========================
+             TOP BAR
+        ========================= -->
+
+        <div class="top-bar">
+
+            <a
+                href="!DOCTYPE2.html"
+                class="home-btn">
+                🏠 Home
+            </a>
+
+            <div class="season-badge">
+                2026 / 27
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             HEADER
+        ========================= -->
+
+        <header class="header">
+
+            <div class="header-icon">
+                🔄
+            </div>
+
+            <h1>
+                2026/27 Transfers
+            </h1>
+
+            <p>
+                Club To Club • Fabrizio Romano Reports
+            </p>
+
+            <div class="header-line"></div>
+
+        </header>
+
+
+        <!-- =========================
+             SEARCH / FILTER
+        ========================= -->
+
+        <div class="controls">
+
+            <input
+                type="text"
+                id="searchInput"
+                class="search-box"
+                placeholder="🔎 Search player, club or position...">
+
+
+            <select
+                id="leagueFilter"
+                class="filter">
+
+                <option value="all">
+                    All Leagues
+                </option>
+
+                <option value="Premier League">
+                    Premier League
+                </option>
+
+                <option value="La Liga">
+                    La Liga
+                </option>
+
+                <option value="Serie A">
+                    Serie A
+                </option>
+
+                <option value="Bundesliga">
+                    Bundesliga
+                </option>
+
+                <option value="Ligue 1">
+                    Ligue 1
+                </option>
+
+                <option value="Other">
+                    Other
+                </option>
+
+            </select>
+
+
+            <select
+                id="typeFilter"
+                class="filter">
+
+                <option value="all">
+                    All Transfer Types
+                </option>
+
+                <option value="Permanent">
+                    Permanent
+                </option>
+
+                <option value="Loan">
+                    Loan
+                </option>
+
+                <option value="Free Agent">
+                    Free Agent
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- =========================
+             TRANSFER TABLE
+        ========================= -->
+
+        <div class="table-card">
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>#</th>
+                            <th>Player</th>
+                            <th>From</th>
+                            <th></th>
+                            <th>To</th>
+                            <th>Position</th>
+                            <th>Fee</th>
+                            <th>Type</th>
+                            <th>League</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="transferTable">
+
+
+                        <!-- 1 -->
+
+                        <tr data-league="Premier League" data-type="Permanent">
+
+                            <td class="number">1</td>
+
+                            <td class="player">
+                                Bradley Barcola
+                            </td>
+
+                            <td class="club">
+                                PSG
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Liverpool
+                            </td>
+
+                            <td>
+                                Forward
+                            </td>
+
+                            <td class="fee">
+                                £100m + add-ons
+                            </td>
+
+                            <td>
+                                Permanent
+                            </td>
+
+                            <td>
+                                Premier League
+                            </td>
+
+                            <td class="date">
+                                29 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 2 -->
+
+                        <tr data-league="La Liga" data-type="Permanent">
+
+                            <td class="number">2</td>
+
+                            <td class="player">
+                                Cristian Romero
+                            </td>
+
+                            <td class="club">
+                                Tottenham
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Atlético Madrid
+                            </td>
+
+                            <td>
+                                Defender
+                            </td>
+
+                            <td class="fee">
+                                €40m package
+                            </td>
+
+                            <td>
+                                Permanent
+                            </td>
+
+                            <td>
+                                La Liga
+                            </td>
+
+                            <td class="date">
+                                12 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 3 -->
+
+                        <tr data-league="La Liga" data-type="Permanent">
+
+                            <td class="number">3</td>
+
+                            <td class="player">
+                                Toni Fernández
+                            </td>
+
+                            <td class="club">
+                                Barcelona
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Venezia
+                            </td>
+
+                            <td>
+                                Forward
+                            </td>
+
+                            <td class="fee">
+                                €4m
+                            </td>
+
+                            <td>
+                                Permanent
+                            </td>
+
+                            <td>
+                                Serie A
+                            </td>
+
+                            <td class="date">
+                                28 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 4 -->
+
+                        <tr data-league="Serie A" data-type="Permanent">
+
+                            <td class="number">4</td>
+
+                            <td class="player">
+                                Alieu Njie
+                            </td>
+
+                            <td class="club">
+                                Torino
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Fiorentina
+                            </td>
+
+                            <td>
+                                Winger
+                            </td>
+
+                            <td class="fee">
+                                €16m + €4m
+                            </td>
+
+                            <td>
+                                Permanent
+                            </td>
+
+                            <td>
+                                Serie A
+                            </td>
+
+                            <td class="date">
+                                29 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 5 -->
+
+                        <tr data-league="Serie A" data-type="Permanent">
+
+                            <td class="number">5</td>
+
+                            <td class="player">
+                                Lazar Jovanović
+                            </td>
+
+                            <td class="club">
+                                Stuttgart
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Udinese
+                            </td>
+
+                            <td>
+                                Winger
+                            </td>
+
+                            <td class="fee">
+                                €6.5m + €1.5m
+                            </td>
+
+                            <td>
+                                Permanent
+                            </td>
+
+                            <td>
+                                Serie A
+                            </td>
+
+                            <td class="date">
+                                29 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 6 -->
+
+                        <tr data-league="Other" data-type="Permanent">
+
+                            <td class="number">6</td>
+
+                            <td class="player">
+                                Juan Jesus
+                            </td>
+
+                            <td class="club">
+                                Napoli
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Venezia
+                            </td>
+
+                            <td>
+                                Defender
+                            </td>
+
+                            <td class="free">
+                                Free Agent
+                            </td>
+
+                            <td>
+                                Free Agent
+                            </td>
+
+                            <td>
+                                Other
+                            </td>
+
+                            <td class="date">
+                                29 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 7 -->
+
+                        <tr data-league="Ligue 1" data-type="Permanent">
+
+                            <td class="number">7</td>
+
+                            <td class="player">
+                                Gio Reyna
+                            </td>
+
+                            <td class="club">
+                                Borussia Mönchengladbach
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Strasbourg
+                            </td>
+
+                            <td>
+                                Midfielder
+                            </td>
+
+                            <td class="fee">
+                                €3m
+                            </td>
+
+                            <td>
+                                Permanent
+                            </td>
+
+                            <td>
+                                Ligue 1
+                            </td>
+
+                            <td class="date">
+                                2 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 8 -->
+
+                        <tr data-league="Premier League" data-type="Permanent">
+
+                            <td class="number">8</td>
+
+                            <td class="player">
+                                Toby Collyer
+                            </td>
+
+                            <td class="club">
+                                Manchester United
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                West Brom
+                            </td>
+
+                            <td>
+                                Midfielder
+                            </td>
+
+                            <td class="fee">
+                                £3m + £5m
+                            </td>
+
+                            <td>
+                                Permanent
+                            </td>
+
+                            <td>
+                                Premier League
+                            </td>
+
+                            <td class="date">
+                                29 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status official">
+                                    Confirmed
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 9 -->
+
+                        <tr data-league="Other" data-type="Permanent">
+
+                            <td class="number">9</td>
+
+                            <td class="player">
+                                Jules Ahoka
+                            </td>
+
+                            <td class="club">
+                                Antwerp
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Sunderland
+                            </td>
+
+                            <td>
+                                Midfielder
+                            </td>
+
+                            <td class="fee">
+                                Undisclosed
+                            </td>
+
+                            <td>
+                                Permanent
+                            </td>
+
+                            <td>
+                                Other
+                            </td>
+
+                            <td class="date">
+                                21 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 10 -->
+
+                        <tr data-league="Premier League" data-type="Loan">
+
+                            <td class="number">10</td>
+
+                            <td class="player">
+                                Axel Disasi
+                            </td>
+
+                            <td class="club">
+                                Chelsea
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Crystal Palace
+                            </td>
+
+                            <td>
+                                Defender
+                            </td>
+
+                            <td class="loan">
+                                Loan fee
+                            </td>
+
+                            <td>
+                                Loan
+                            </td>
+
+                            <td>
+                                Premier League
+                            </td>
+
+                            <td class="date">
+                                21 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 11 -->
+
+                        <tr data-league="Premier League" data-type="Permanent">
+
+                            <td class="number">11</td>
+
+                            <td class="player">
+                                Christian Nørgaard
+                            </td>
+
+                            <td class="club">
+                                Arsenal
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Everton
+                            </td>
+
+                            <td>
+                                Midfielder
+                            </td>
+
+                            <td class="fee">
+                                £7m
+                            </td>
+
+                            <td>
+                                Permanent
+                            </td>
+
+                            <td>
+                                Premier League
+                            </td>
+
+                            <td class="date">
+                                1 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 12 -->
+
+                        <tr data-league="La Liga" data-type="Permanent">
+
+                            <td class="number">12</td>
+
+                            <td class="player">
+                                Peter Gulácsi
+                            </td>
+
+                            <td class="club">
+                                RB Leipzig
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Villarreal
+                            </td>
+
+                            <td>
+                                Goalkeeper
+                            </td>
+
+                            <td class="fee">
+                                €2m
+                            </td>
+
+                            <td>
+                                Permanent
+                            </td>
+
+                            <td>
+                                La Liga
+                            </td>
+
+                            <td class="date">
+                                1 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 13 -->
+
+                        <tr data-league="Other" data-type="Loan">
+
+                            <td class="number">13</td>
+
+                            <td class="player">
+                                Andrea Pinamonti
+                            </td>
+
+                            <td class="club">
+                                Sassuolo
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Lazio
+                            </td>
+
+                            <td>
+                                Forward
+                            </td>
+
+                            <td class="loan">
+                                €3m loan
+                            </td>
+
+                            <td>
+                                Loan
+                            </td>
+
+                            <td>
+                                Serie A
+                            </td>
+
+                            <td class="date">
+                                25 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status official">
+                                    Confirmed
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 14 -->
+
+                        <tr data-league="Serie A" data-type="Loan">
+
+                            <td class="number">14</td>
+
+                            <td class="player">
+                                Christopher Nkunku
+                            </td>
+
+                            <td class="club">
+                                AC Milan
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                RB Leipzig
+                            </td>
+
+                            <td>
+                                Forward
+                            </td>
+
+                            <td class="loan">
+                                €3.5m loan
+                            </td>
+
+                            <td>
+                                Loan
+                            </td>
+
+                            <td>
+                                Bundesliga
+                            </td>
+
+                            <td class="date">
+                                23 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 15 -->
+
+                        <tr data-league="Premier League" data-type="Permanent">
+
+                            <td class="number">15</td>
+
+                            <td class="player">
+                                Allan
+                            </td>
+
+                            <td class="club">
+                                Palmeiras
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Manchester City
+                            </td>
+
+                            <td>
+                                Winger
+                            </td>
+
+                            <td class="fee">
+                                €40m + add-ons
+                            </td>
+
+                            <td>
+                                Permanent
+                            </td>
+
+                            <td>
+                                Premier League
+                            </td>
+
+                            <td class="date">
+                                24 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 16 -->
+
+                        <tr data-league="Other" data-type="Loan">
+
+                            <td class="number">16</td>
+
+                            <td class="player">
+                                Kamil Grabara
+                            </td>
+
+                            <td class="club">
+                                Wolfsburg
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Juventus
+                            </td>
+
+                            <td>
+                                Goalkeeper
+                            </td>
+
+                            <td class="loan">
+                                Loan + option
+                            </td>
+
+                            <td>
+                                Loan
+                            </td>
+
+                            <td>
+                                Other
+                            </td>
+
+                            <td class="date">
+                                24 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 17 -->
+
+                        <tr data-league="Other" data-type="Loan">
+
+                            <td class="number">17</td>
+
+                            <td class="player">
+                                Willy Kambwala
+                            </td>
+
+                            <td class="club">
+                                Villarreal
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Como
+                            </td>
+
+                            <td>
+                                Defender
+                            </td>
+
+                            <td class="loan">
+                                Loan + €10m option
+                            </td>
+
+                            <td>
+                                Loan
+                            </td>
+
+                            <td>
+                                Serie A
+                            </td>
+
+                            <td class="date">
+                                22 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 18 -->
+
+                        <tr data-league="Bundesliga" data-type="Loan">
+
+                            <td class="number">18</td>
+
+                            <td class="player">
+                                Bryan Zaragoza
+                            </td>
+
+                            <td class="club">
+                                Bayern Munich
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Espanyol
+                            </td>
+
+                            <td>
+                                Winger
+                            </td>
+
+                            <td class="loan">
+                                Loan + €8m option
+                            </td>
+
+                            <td>
+                                Loan
+                            </td>
+
+                            <td>
+                                La Liga
+                            </td>
+
+                            <td class="date">
+                                25 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status official">
+                                    Confirmed
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 19 -->
+
+                        <tr data-league="Other" data-type="Permanent">
+
+                            <td class="number">19</td>
+
+                            <td class="player">
+                                Francisco Trincão
+                            </td>
+
+                            <td class="club">
+                                Sporting CP
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Al Ahli
+                            </td>
+
+                            <td>
+                                Winger
+                            </td>
+
+                            <td class="fee">
+                                $45m + $5m
+                            </td>
+
+                            <td>
+                                Permanent
+                            </td>
+
+                            <td>
+                                Other
+                            </td>
+
+                            <td class="date">
+                                13 Jul 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 20 -->
+
+                        <tr data-league="Premier League" data-type="Permanent">
+
+                            <td class="number">20</td>
+
+                            <td class="player">
+                                Luka Vušković
+                            </td>
+
+                            <td class="club">
+                                Tottenham
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Brighton
+                            </td>
+
+                            <td>
+                                Defender
+                            </td>
+
+                            <td class="fee">
+                                £46m fixed
+                            </td>
+
+                            <td>
+                                Permanent
+                            </td>
+
+                            <td>
+                                Premier League
+                            </td>
+
+                            <td class="date">
+                                13 Jul 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 21 -->
+
+                        <tr data-league="Premier League" data-type="Permanent">
+
+                            <td class="number">21</td>
+
+                            <td class="player">
+                                Johan Manzambi
+                            </td>
+
+                            <td class="club">
+                                Freiburg
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Aston Villa
+                            </td>
+
+                            <td>
+                                Midfielder
+                            </td>
+
+                            <td class="fee">
+                                €60m+
+                            </td>
+
+                            <td>
+                                Permanent
+                            </td>
+
+                            <td>
+                                Premier League
+                            </td>
+
+                            <td class="date">
+                                13 Jul 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 22 -->
+
+                        <tr data-league="Other" data-type="Loan">
+
+                            <td class="number">22</td>
+
+                            <td class="player">
+                                Danilho Doekhi
+                            </td>
+
+                            <td class="club">
+                                Union Berlin
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Lazio
+                            </td>
+
+                            <td>
+                                Defender
+                            </td>
+
+                            <td class="loan">
+                                Undisclosed
+                            </td>
+
+                            <td>
+                                Loan
+                            </td>
+
+                            <td>
+                                Serie A
+                            </td>
+
+                            <td class="date">
+                                13 Jul 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 23 -->
+
+                        <tr data-league="Other" data-type="Loan">
+
+                            <td class="number">23</td>
+
+                            <td class="player">
+                                Kristjan Asllani
+                            </td>
+
+                            <td class="club">
+                                Inter
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Al Jazira
+                            </td>
+
+                            <td>
+                                Midfielder
+                            </td>
+
+                            <td class="loan">
+                                €2m loan + option
+                            </td>
+
+                            <td>
+                                Loan
+                            </td>
+
+                            <td>
+                                Other
+                            </td>
+
+                            <td class="date">
+                                26 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 24 -->
+
+                        <tr data-league="Other" data-type="Permanent">
+
+                            <td class="number">24</td>
+
+                            <td class="player">
+                                Alieu Njie
+                            </td>
+
+                            <td class="club">
+                                Torino
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                Fiorentina
+                            </td>
+
+                            <td>
+                                Winger
+                            </td>
+
+                            <td class="fee">
+                                €16m + €4m
+                            </td>
+
+                            <td>
+                                Permanent
+                            </td>
+
+                            <td>
+                                Serie A
+                            </td>
+
+                            <td class="date">
+                                29 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- 25 -->
+
+                        <tr data-league="Other" data-type="Permanent">
+
+                            <td class="number">25</td>
+
+                            <td class="player">
+                                Erik Lira
+                            </td>
+
+                            <td class="club">
+                                Cruz Azul
+                            </td>
+
+                            <td class="arrow">
+                                →
+                            </td>
+
+                            <td class="club">
+                                AS Monaco
+                            </td>
+
+                            <td>
+                                Midfielder
+                            </td>
+
+                            <td class="fee">
+                                €8m + €3m
+                            </td>
+
+                            <td>
+                                Permanent
+                            </td>
+
+                            <td>
+                                Ligue 1
+                            </td>
+
+                            <td class="date">
+                                28 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    Here We Go
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             FOOTER
+        ========================= -->
+
+        <footer>
+            ⚽ 2026/27 Football Transfers • Reported by Fabrizio Romano
+        </footer>
+
+    </div>
+
+
+    <!-- =========================
+         SEARCH SCRIPT
+    ========================= -->
+
+    <script>
+
+        const searchInput =
+            document.getElementById("searchInput");
+
+        const leagueFilter =
+            document.getElementById("leagueFilter");
+
+        const typeFilter =
+            document.getElementById("typeFilter");
+
+        const rows =
+            document.querySelectorAll(
+                "#transferTable tr"
+            );
+
+
+        function filterTransfers() {
+
+            const search =
+                searchInput.value
+                    .toLowerCase()
+                    .trim();
+
+            const selectedLeague =
+                leagueFilter.value;
+
+            const selectedType =
+                typeFilter.value;
+
+
+            rows.forEach(row => {
+
+                const text =
+                    row.textContent
+                        .toLowerCase();
+
+                const rowLeague =
+                    row.dataset.league;
+
+                const rowType =
+                    row.dataset.type;
+
+
+                const searchMatch =
+                    text.includes(search);
+
+                const leagueMatch =
+                    selectedLeague === "all" ||
+                    rowLeague === selectedLeague;
+
+                const typeMatch =
+                    selectedType === "all" ||
+                    rowType === selectedType;
+
+
+                if (
+                    searchMatch &&
+                    leagueMatch &&
+                    typeMatch
+                ) {
+
+                    row.style.display = "";
+
+                } else {
+
+                    row.style.display = "none";
+
+                }
+
+            });
+        }
+
+
+        searchInput.addEventListener(
+            "input",
+            filterTransfers
+        );
+
+
+        leagueFilter.addEventListener(
+            "change",
+            filterTransfers
+        );
+
+
+        typeFilter.addEventListener(
+            "change",
+            filterTransfers
+        );
+
+    </script>
+
+</body>
+
+</html>
+```
+

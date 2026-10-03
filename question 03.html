@@ -1,0 +1,300 @@
+<a<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Football Trivia Quiz</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.50),
+                    rgba(0, 0, 0, 0.50)
+                ),
+                url("image 02(1).png");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            color: white;
+        }
+
+        .quiz-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+
+            background: rgba(0, 0, 0, 0.40);
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* HOME BUTTON */
+        .home-btn {
+            display: inline-block;
+            background: #034694;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+
+            margin-bottom: 25px;
+
+            transition: 0.3s ease;
+        }
+
+        .home-btn:hover {
+            background: #0564c7;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(3, 70, 148, 0.5);
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 30px;
+            margin: 10px 0 35px;
+
+            text-transform: uppercase;
+            letter-spacing: 1px;
+
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .question {
+            background: rgba(0, 0, 0, 0.60);
+
+            padding: 18px 20px;
+            margin-bottom: 15px;
+
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+
+            transition: 0.25s ease;
+        }
+
+        .question:hover {
+            background: rgba(3, 70, 148, 0.45);
+            transform: translateY(-2px);
+        }
+
+        h4 {
+            margin: 0 0 10px;
+
+            font-size: 20px;
+            line-height: 1.4;
+        }
+
+        p {
+            margin: 5px 0;
+
+            font-size: 17px;
+            line-height: 1.6;
+
+            color: #eeeeee;
+        }
+
+        /* ANSWERS BUTTON */
+        .answer-link {
+            display: block;
+
+            margin-top: 30px;
+            padding: 16px;
+
+            background: #ff0000;
+            color: white;
+
+            font-size: 20px;
+            font-weight: bold;
+
+            text-decoration: none;
+            text-align: center;
+
+            border-radius: 8px;
+
+            transition: 0.3s ease;
+        }
+
+        .answer-link:hover {
+            background: #b80000;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 0, 0, 0.35);
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+
+            body {
+                padding: 10px;
+            }
+
+            .quiz-container {
+                padding: 20px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            h4 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+
+            .home-btn {
+                padding: 10px 18px;
+            }
+
+            .answer-link {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="quiz-container">
+
+        <!-- HOME BUTTON -->
+        <a href="!DOCTYPE2.html" class="home-btn">
+            🏠 Home
+        </a>
+
+        <h3> Football Question </h3>
+
+        <div class="question">
+            <h4>1. Who won the Ballon d'Or in 1991?</h4>
+            <p>A) Jean-Pierre Papin &nbsp; B) Lothar Matthäus &nbsp; C) Marco van Basten &nbsp; D) Roberto Baggio</p>
+        </div>
+
+        <div class="question">
+            <h4>2. Which player scored the winning goal in the 1990 World Cup final?</h4>
+            <p>A) Rudi Völler &nbsp; B) Andreas Brehme &nbsp; C) Jürgen Klinsmann &nbsp; D) Lothar Matthäus</p>
+        </div>
+
+        <div class="question">
+            <h4>3. Who was the first African player to win the Ballon d'Or?</h4>
+            <p>A) George Weah &nbsp; B) Didier Drogba &nbsp; C) Samuel Eto'o &nbsp; D) Abedi Pele</p>
+        </div>
+
+        <div class="question">
+            <h4>4. Which goalkeeper won the Yashin Trophy in 2019?</h4>
+            <p>A) Alisson &nbsp; B) Manuel Neuer &nbsp; C) Thibaut Courtois &nbsp; D) Marc-André ter Stegen</p>
+        </div>
+
+        <div class="question">
+            <h4>5. Who scored the fastest goal in World Cup history?</h4>
+            <p>A) Hakan Şükür &nbsp; B) Miroslav Klose &nbsp; C) Thomas Müller &nbsp; D) David Villa</p>
+        </div>
+
+        <div class="question">
+            <h4>6. Which player won the Golden Boot at the 2010 World Cup?</h4>
+            <p>A) Diego Forlán &nbsp; B) Thomas Müller &nbsp; C) David Villa &nbsp; D) Wesley Sneijder</p>
+        </div>
+
+        <div class="question">
+            <h4>7. Who was the first player to score in five different World Cups?</h4>
+            <p>A) Cristiano Ronaldo &nbsp; B) Lionel Messi &nbsp; C) Marta &nbsp; D) Miroslav Klose</p>
+        </div>
+
+        <div class="question">
+            <h4>8. Which player has the most appearances for Spain's men's national team?</h4>
+            <p>A) Xavi &nbsp; B) Sergio Ramos &nbsp; C) Iker Casillas &nbsp; D) Andrés Iniesta</p>
+        </div>
+
+        <div class="question">
+            <h4>9. Who scored the winning goal in the 2014 World Cup final?</h4>
+            <p>A) Thomas Müller &nbsp; B) Mario Götze &nbsp; C) Miroslav Klose &nbsp; D) André Schürrle</p>
+        </div>
+
+        <div class="question">
+            <h4>10. Which player won the 2006 Ballon d'Or?</h4>
+            <p>A) Fabio Cannavaro &nbsp; B) Ronaldinho &nbsp; C) Thierry Henry &nbsp; D) Zinedine Zidane</p>
+        </div>
+
+        <div class="question">
+            <h4>11. Which player scored a hat-trick in the 1966 World Cup final?</h4>
+            <p>A) Bobby Charlton &nbsp; B) Geoff Hurst &nbsp; C) Jimmy Greaves &nbsp; D) Roger Hunt</p>
+        </div>
+
+        <div class="question">
+            <h4>12. Who was the first goalkeeper to win the Ballon d'Or?</h4>
+            <p>A) Dino Zoff &nbsp; B) Gordon Banks &nbsp; C) Lev Yashin &nbsp; D) Peter Schmeichel</p>
+        </div>
+
+        <div class="question">
+            <h4>13. Which player has won the most Champions League titles as a player?</h4>
+            <p>A) Cristiano Ronaldo &nbsp; B) Paco Gento &nbsp; C) Luka Modrić &nbsp; D) Karim Benzema</p>
+        </div>
+
+        <div class="question">
+            <h4>14. Who scored Barcelona's first goal in the 2009 Champions League final?</h4>
+            <p>A) Samuel Eto'o &nbsp; B) Lionel Messi &nbsp; C) Xavi &nbsp; D) Thierry Henry</p>
+        </div>
+
+        <div class="question">
+            <h4>15. Which player won the 1986 Ballon d'Or?</h4>
+            <p>A) Diego Maradona &nbsp; B) Michel Platini &nbsp; C) Igor Belanov &nbsp; D) Gary Lineker</p>
+        </div>
+
+        <div class="question">
+            <h4>16. Who scored the winning goal for Manchester United in the 1999 Champions League final?</h4>
+            <p>A) David Beckham &nbsp; B) Teddy Sheringham &nbsp; C) Ole Gunnar Solskjær &nbsp; D) Ryan Giggs</p>
+        </div>
+
+        <div class="question">
+            <h4>17. Which player was nicknamed "Il Divin Codino"?</h4>
+            <p>A) Paolo Maldini &nbsp; B) Roberto Baggio &nbsp; C) Alessandro Del Piero &nbsp; D) Francesco Totti</p>
+        </div>
+
+        <div class="question">
+            <h4>18. Who won the Golden Ball at the 2018 World Cup?</h4>
+            <p>A) Luka Modrić &nbsp; B) Antoine Griezmann &nbsp; C) Kylian Mbappé &nbsp; D) Eden Hazard</p>
+        </div>
+
+        <div class="question">
+            <h4>19. Which player scored the most goals at the 2002 World Cup?</h4>
+            <p>A) Rivaldo &nbsp; B) Ronaldo Nazário &nbsp; C) Miroslav Klose &nbsp; D) Ronaldinho</p>
+        </div>
+
+        <div class="question">
+            <h4>20. Who scored the only goal in the 1998 World Cup final?</h4>
+            <p>A) Ronaldo &nbsp; B) Zinedine Zidane &nbsp; C) Thierry Henry &nbsp; D) Emmanuel Petit</p>
+        </div>
+
+        <!-- Continue your remaining questions here -->
+
+        <div class="question">
+            <h4>last. 🐐 Which player has won the most Ballon d'Or awards as of 2026?</h4>
+            <p>A) Cristiano Ronaldo &nbsp; B) Lionel Messi &nbsp; C) Michel Platini &nbsp; D) Johan Cruyff</p>
+        </div>
+
+        <!-- ANSWERS -->
+        <a href="questions answer.html" class="answer-link">
+            📝 ANSWERS
+        </a>
+
+    </div>
+
+</body>
+</html>

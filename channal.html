@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Social Media</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(0, 100, 255, 0.20),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #000000,
+                    #030812,
+                    #000000
+                );
+
+            overflow: hidden;
+        }
+
+
+        /* =========================
+           BACKGROUND GLOW
+        ========================= */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+            width: 500px;
+            height: 500px;
+
+            top: -200px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            background: rgba(0, 110, 255, 0.15);
+
+            border-radius: 50%;
+
+            filter: blur(100px);
+
+            pointer-events: none;
+        }
+
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .container {
+            position: relative;
+            z-index: 2;
+
+            width: 90%;
+            max-width: 650px;
+
+            padding: 45px 30px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.10),
+                    rgba(255,255,255,0.03)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.15);
+
+            border-radius: 25px;
+
+            backdrop-filter: blur(20px);
+
+            box-shadow:
+                0 25px 70px
+                rgba(0,0,0,0.7),
+
+                0 0 35px
+                rgba(0,100,255,0.15);
+        }
+
+
+        /* =========================
+           HOME BUTTON
+        ========================= */
+
+        .home-btn {
+            display: inline-block;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #034694,
+                    #0879db
+                );
+
+            color: white;
+
+            padding: 12px 25px;
+
+            margin-bottom: 35px;
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            font-size: 15px;
+
+            box-shadow:
+                0 0 20px
+                rgba(0,120,255,0.3);
+
+            transition: 0.3s ease;
+        }
+
+        .home-btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 0 30px
+                rgba(0,140,255,0.7);
+        }
+
+
+        /* =========================
+           TITLE
+        ========================= */
+
+        h1 {
+            font-size: 42px;
+
+            margin-bottom: 12px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #55b8ff,
+                    #ffffff
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .subtitle {
+            color: #9db5cc;
+
+            font-size: 16px;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           SOCIAL BUTTONS
+        ========================= */
+
+        .social-btn {
+            display: block;
+
+            width: 100%;
+
+            padding: 17px 20px;
+
+            margin: 15px 0;
+
+            border-radius: 14px;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .social-btn:hover {
+            transform:
+                translateY(-5px)
+                scale(1.02);
+        }
+
+
+        /* =========================
+           INSTAGRAM
+        ========================= */
+
+        .instagram {
+            background:
+                linear-gradient(
+                    135deg,
+                    #833ab4,
+                    #fd1d1d,
+                    #fcb045
+                );
+
+            box-shadow:
+                0 10px 30px
+                rgba(225,48,108,0.25);
+        }
+
+        .instagram:hover {
+            box-shadow:
+                0 15px 40px
+                rgba(225,48,108,0.55);
+        }
+
+
+        /* =========================
+           TIKTOK
+        ========================= */
+
+        .tiktok {
+            background: #050505;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.25);
+
+            box-shadow:
+                0 10px 30px
+                rgba(0,0,0,0.5);
+        }
+
+        .tiktok:hover {
+            border-color: #00f2ea;
+
+            box-shadow:
+                0 0 25px
+                rgba(0,242,234,0.35);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            margin-top: 30px;
+
+            color: #71859a;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 35px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .social-btn {
+                font-size: 15px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <!-- HOME -->
+
+        <a
+            href="!DOCTYPE2.html"
+            class="home-btn">
+
+            🏠 Home
+
+        </a>
+
+
+        <!-- TITLE -->
+
+        <h1>
+            Follow Me
+        </h1>
+
+        <p class="subtitle">
+            Connect with me on social media
+        </p>
+
+
+        <!-- INSTAGRAM -->
+
+        <a
+            class="social-btn instagram"
+            href="https://www.instagram.com/kai_zxv/"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            📷 Instagram
+            <br>
+
+            <small>@kai_zxv</small>
+
+        </a>
+
+
+        <!-- TIKTOK -->
+
+        <a
+            class="social-btn tiktok"
+            href="https://www.tiktok.com/@vxaph214"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            🎵 TikTok
+            <br>
+
+            <small>@vxaph214</small>
+
+        </a>
+
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+            ⚽ Football • Social • Community
+        </div>
+
+    </div>
+
+</body>
+
+</html>
